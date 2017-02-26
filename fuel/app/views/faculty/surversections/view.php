@@ -16,5 +16,5 @@
 	<strong>Section required yn:</strong>
 	<?php echo $surversection->section_required_yn; ?></p>
 
-<?php echo Html::anchor('admin/surversections/edit/'.$surversection->id, 'Edit'); ?> |
-<?php echo Html::anchor('admin/surversections', 'Back'); ?>
+<?php echo Html::anchor('faculty/surversections/edit/'.$surversection->id, 'Edit'); ?> |
+<?php echo Html::anchor('faculty/surversections', 'Back'); ?>

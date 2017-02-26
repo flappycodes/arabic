@@ -1,7 +1,7 @@
 <h2>Editing Surversection</h2>
 <br>
 
-<?php echo render('admin/surversections/_form'); ?>
+<?php echo render('faculty/surversections/_form'); ?>
 <p>
-	<?php echo Html::anchor('admin/surversections/view/'.$surversection->id, 'View'); ?> |
-	<?php echo Html::anchor('admin/surversections', 'Back'); ?></p>
+	<?php echo Html::anchor('faculty/surversections/view/'.$surversection->id, 'View'); ?> |
+	<?php echo Html::anchor('faculty/surversections', 'Back'); ?></p>

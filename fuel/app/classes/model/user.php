@@ -33,4 +33,22 @@ class Model_User extends \Orm\Model
 
 	protected static $_table_name = 'users';
 
+	public static function validate($factory){
+
+		$val = Validation::forge($factory);
+		$val->add_field(
+			'username', 
+			'password', 
+			'fname',
+			'lname', 
+			'mname', 
+			'fname',
+			'email',
+			'year', 
+			'group'
+		);
+
+		return $val;
+	}
+
 }

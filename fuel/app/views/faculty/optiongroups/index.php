@@ -13,9 +13,9 @@
 
 			<td><?php echo $item->option_group_name; ?></td>
 			<td>
-				<?php echo Html::anchor('admin/optiongroups/view/'.$item->id, 'View'); ?> |
-				<?php echo Html::anchor('admin/optiongroups/edit/'.$item->id, 'Edit'); ?> |
-				<?php echo Html::anchor('admin/optiongroups/delete/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
+				<?php echo Html::anchor('faculty/optiongroups/view/'.$item->id, 'View'); ?> |
+				<?php echo Html::anchor('faculty/optiongroups/edit/'.$item->id, 'Edit'); ?> |
+				<?php echo Html::anchor('faculty/optiongroups/delete/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
 
 			</td>
 		</tr>
@@ -26,6 +26,6 @@
 <p>No Optiongroups.</p>
 
 <?php endif; ?><p>
-	<?php echo Html::anchor('admin/optiongroups/create', 'Add new Optiongroup', array('class' => 'btn btn-success')); ?>
+	<?php echo Html::anchor('faculty/optiongroups/create', 'Add new Optiongroup', array('class' => 'btn btn-success')); ?>
 
 </p>

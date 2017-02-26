@@ -1,7 +1,7 @@
 <h2>Listing Answers</h2>
 <br>
 <?php if ($answers): ?>
-<table class="table table-striped">
+<table class="table table-striped" id="answertbl">
 	<thead>
 		<tr>
 			<th>User id</th>
@@ -23,9 +23,9 @@
 			<td><?php echo $item->answer_yn; ?></td>
 			<td><?php echo $item->unit_of_measure_id; ?></td>
 			<td>
-				<?php echo Html::anchor('admin/answers/view/'.$item->id, 'View'); ?> |
-				<?php echo Html::anchor('admin/answers/edit/'.$item->id, 'Edit'); ?> |
-				<?php echo Html::anchor('admin/answers/delete/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
+				<?php echo Html::anchor('faculty/answers/view/'.$item->id, 'View'); ?> |
+				<?php echo Html::anchor('faculty/answers/edit/'.$item->id, 'Edit'); ?> |
+				<?php echo Html::anchor('faculty/answers/delete/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
 
 			</td>
 		</tr>
@@ -36,6 +36,6 @@
 <p>No Answers.</p>
 
 <?php endif; ?><p>
-	<?php echo Html::anchor('admin/answers/create', 'Add new Answer', array('class' => 'btn btn-success')); ?>
+	<?php echo Html::anchor('faculty/answers/create', 'Add new Answer', array('class' => 'btn btn-success')); ?>
 
 </p>

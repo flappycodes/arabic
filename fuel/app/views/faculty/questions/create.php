@@ -1,7 +1,7 @@
 <h2>New Question</h2>
 <br>
 
-<?php echo render('admin/questions/_form'); ?>
+<?php echo render('faculty/questions/_form'); ?>
 
 
-<p><?php echo Html::anchor('admin/questions', 'Back'); ?></p>
+<p><?php echo Html::anchor('faculty/questions', 'Back'); ?></p>

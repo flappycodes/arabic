@@ -1,12 +1,12 @@
 <?php
-class Controller_Admin_Surveyheaders extends Controller_Admin
+class Controller_Faculty_Surveyheaders extends Controller_Faculty
 {
 
 	public function action_index()
 	{
 		$data['surveyheaders'] = Model_Surveyheader::find('all');
 		$this->template->title = "Surveyheaders";
-		$this->template->content = View::forge('admin/surveyheaders/index', $data);
+		$this->template->content = View::forge('faculty/surveyheaders/index', $data);
 
 	}
 
@@ -15,7 +15,7 @@ class Controller_Admin_Surveyheaders extends Controller_Admin
 		$data['surveyheader'] = Model_Surveyheader::find($id);
 
 		$this->template->title = "Surveyheader";
-		$this->template->content = View::forge('admin/surveyheaders/view', $data);
+		$this->template->content = View::forge('faculty/surveyheaders/view', $data);
 
 	}
 
@@ -38,7 +38,7 @@ class Controller_Admin_Surveyheaders extends Controller_Admin
 				{
 					Session::set_flash('success', e('Added surveyheader #'.$surveyheader->id.'.'));
 
-					Response::redirect('admin/surveyheaders');
+					Response::redirect('faculty/surveyheaders');
 				}
 
 				else
@@ -53,7 +53,7 @@ class Controller_Admin_Surveyheaders extends Controller_Admin
 		}
 
 		$this->template->title = "Surveyheaders";
-		$this->template->content = View::forge('admin/surveyheaders/create');
+		$this->template->content = View::forge('faculty/surveyheaders/create');
 
 	}
 
@@ -73,7 +73,7 @@ class Controller_Admin_Surveyheaders extends Controller_Admin
 			{
 				Session::set_flash('success', e('Updated surveyheader #' . $id));
 
-				Response::redirect('admin/surveyheaders');
+				Response::redirect('faculty/surveyheaders');
 			}
 
 			else
@@ -98,7 +98,7 @@ class Controller_Admin_Surveyheaders extends Controller_Admin
 		}
 
 		$this->template->title = "Surveyheaders";
-		$this->template->content = View::forge('admin/surveyheaders/edit');
+		$this->template->content = View::forge('faculty/surveyheaders/edit');
 
 	}
 
@@ -116,7 +116,7 @@ class Controller_Admin_Surveyheaders extends Controller_Admin
 			Session::set_flash('error', e('Could not delete surveyheader #'.$id));
 		}
 
-		Response::redirect('admin/surveyheaders');
+		Response::redirect('faculty/surveyheaders');
 
 	}
 

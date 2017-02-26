@@ -4,5 +4,5 @@
 	<strong>Input type name:</strong>
 	<?php echo $inputtype->input_type_name; ?></p>
 
-<?php echo Html::anchor('admin/inputtypes/edit/'.$inputtype->id, 'Edit'); ?> |
-<?php echo Html::anchor('admin/inputtypes', 'Back'); ?>
+<?php echo Html::anchor('faculty/inputtypes/edit/'.$inputtype->id, 'Edit'); ?> |
+<?php echo Html::anchor('faculty/inputtypes', 'Back'); ?>

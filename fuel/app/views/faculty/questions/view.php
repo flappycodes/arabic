@@ -16,5 +16,5 @@
 	<strong>Allow multiple option answers:</strong>
 	<?php echo $question->allow_multiple_option_answers; ?></p>
 
-<?php echo Html::anchor('admin/questions/edit/'.$question->id, 'Edit'); ?> |
-<?php echo Html::anchor('admin/questions', 'Back'); ?>
+<?php echo Html::anchor('faculty/questions/edit/'.$question->id, 'Edit'); ?> |
+<?php echo Html::anchor('faculty/questions', 'Back'); ?>

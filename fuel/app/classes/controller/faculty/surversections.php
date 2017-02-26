@@ -1,12 +1,12 @@
 <?php
-class Controller_Admin_Surversections extends Controller_Admin
+class Controller_Faculty_Surversections extends Controller_Faculty
 {
 
 	public function action_index()
 	{
 		$data['surversections'] = Model_Surversection::find('all');
 		$this->template->title = "Surversections";
-		$this->template->content = View::forge('admin/surversections/index', $data);
+		$this->template->content = View::forge('faculty/surversections/index', $data);
 
 	}
 
@@ -15,7 +15,7 @@ class Controller_Admin_Surversections extends Controller_Admin
 		$data['surversection'] = Model_Surversection::find($id);
 
 		$this->template->title = "Surversection";
-		$this->template->content = View::forge('admin/surversections/view', $data);
+		$this->template->content = View::forge('faculty/surversections/view', $data);
 
 	}
 
@@ -39,7 +39,7 @@ class Controller_Admin_Surversections extends Controller_Admin
 				{
 					Session::set_flash('success', e('Added surversection #'.$surversection->id.'.'));
 
-					Response::redirect('admin/surversections');
+					Response::redirect('faculty/surversections');
 				}
 
 				else
@@ -54,7 +54,7 @@ class Controller_Admin_Surversections extends Controller_Admin
 		}
 
 		$this->template->title = "Surversections";
-		$this->template->content = View::forge('admin/surversections/create');
+		$this->template->content = View::forge('faculty/surversections/create');
 
 	}
 
@@ -75,7 +75,7 @@ class Controller_Admin_Surversections extends Controller_Admin
 			{
 				Session::set_flash('success', e('Updated surversection #' . $id));
 
-				Response::redirect('admin/surversections');
+				Response::redirect('faculty/surversections');
 			}
 
 			else
@@ -101,7 +101,7 @@ class Controller_Admin_Surversections extends Controller_Admin
 		}
 
 		$this->template->title = "Surversections";
-		$this->template->content = View::forge('admin/surversections/edit');
+		$this->template->content = View::forge('faculty/surversections/edit');
 
 	}
 
@@ -119,7 +119,7 @@ class Controller_Admin_Surversections extends Controller_Admin
 			Session::set_flash('error', e('Could not delete surversection #'.$id));
 		}
 
-		Response::redirect('admin/surversections');
+		Response::redirect('faculty/surversections');
 
 	}
 

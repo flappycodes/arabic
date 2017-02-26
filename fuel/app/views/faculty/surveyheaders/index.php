@@ -19,9 +19,9 @@
 			<td><?php echo $item->instructions; ?></td>
 			<td><?php echo $item->other_header_info; ?></td>
 			<td>
-				<?php echo Html::anchor('admin/surveyheaders/view/'.$item->id, 'View'); ?> |
-				<?php echo Html::anchor('admin/surveyheaders/edit/'.$item->id, 'Edit'); ?> |
-				<?php echo Html::anchor('admin/surveyheaders/delete/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
+				<?php echo Html::anchor('faculty/surveyheaders/view/'.$item->id, 'View'); ?> |
+				<?php echo Html::anchor('faculty/surveyheaders/edit/'.$item->id, 'Edit'); ?> |
+				<?php echo Html::anchor('faculty/surveyheaders/delete/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
 
 			</td>
 		</tr>
@@ -32,6 +32,6 @@
 <p>No Surveyheaders.</p>
 
 <?php endif; ?><p>
-	<?php echo Html::anchor('admin/surveyheaders/create', 'Add new Surveyheader', array('class' => 'btn btn-success')); ?>
+	<?php echo Html::anchor('faculty/surveyheaders/create', 'Add new Surveyheader', array('class' => 'btn btn-success')); ?>
 
 </p>

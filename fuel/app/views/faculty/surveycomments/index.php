@@ -17,9 +17,9 @@
 			<td><?php echo $item->survey_header_id; ?></td>
 			<td><?php echo $item->comments; ?></td>
 			<td>
-				<?php echo Html::anchor('admin/surveycomments/view/'.$item->id, 'View'); ?> |
-				<?php echo Html::anchor('admin/surveycomments/edit/'.$item->id, 'Edit'); ?> |
-				<?php echo Html::anchor('admin/surveycomments/delete/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
+				<?php echo Html::anchor('faculty/surveycomments/view/'.$item->id, 'View'); ?> |
+				<?php echo Html::anchor('faculty/surveycomments/edit/'.$item->id, 'Edit'); ?> |
+				<?php echo Html::anchor('faculty/surveycomments/delete/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
 
 			</td>
 		</tr>
@@ -30,6 +30,6 @@
 <p>No Surveycomments.</p>
 
 <?php endif; ?><p>
-	<?php echo Html::anchor('admin/surveycomments/create', 'Add new Surveycomment', array('class' => 'btn btn-success')); ?>
+	<?php echo Html::anchor('faculty/surveycomments/create', 'Add new Surveycomment', array('class' => 'btn btn-success')); ?>
 
 </p>

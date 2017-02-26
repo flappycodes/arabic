@@ -1,7 +1,7 @@
 <h2>New Optiongroup</h2>
 <br>
 
-<?php echo render('admin/optiongroups/_form'); ?>
+<?php echo render('faculty/optiongroups/_form'); ?>
 
 
-<p><?php echo Html::anchor('admin/optiongroups', 'Back'); ?></p>
+<p><?php echo Html::anchor('faculty/optiongroups', 'Back'); ?></p>

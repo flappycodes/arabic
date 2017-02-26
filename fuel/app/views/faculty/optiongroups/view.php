@@ -4,5 +4,5 @@
 	<strong>Option group name:</strong>
 	<?php echo $optiongroup->option_group_name; ?></p>
 
-<?php echo Html::anchor('admin/optiongroups/edit/'.$optiongroup->id, 'Edit'); ?> |
-<?php echo Html::anchor('admin/optiongroups', 'Back'); ?>
+<?php echo Html::anchor('faculty/optiongroups/edit/'.$optiongroup->id, 'Edit'); ?> |
+<?php echo Html::anchor('faculty/optiongroups', 'Back'); ?>

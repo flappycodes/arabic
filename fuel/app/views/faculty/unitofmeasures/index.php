@@ -13,9 +13,9 @@
 
 			<td><?php echo $item->unit_of_measures_name; ?></td>
 			<td>
-				<?php echo Html::anchor('admin/unitofmeasures/view/'.$item->id, 'View'); ?> |
-				<?php echo Html::anchor('admin/unitofmeasures/edit/'.$item->id, 'Edit'); ?> |
-				<?php echo Html::anchor('admin/unitofmeasures/delete/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
+				<?php echo Html::anchor('faculty/unitofmeasures/view/'.$item->id, 'View'); ?> |
+				<?php echo Html::anchor('faculty/unitofmeasures/edit/'.$item->id, 'Edit'); ?> |
+				<?php echo Html::anchor('faculty/unitofmeasures/delete/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
 
 			</td>
 		</tr>
@@ -26,6 +26,6 @@
 <p>No Unitofmeasures.</p>
 
 <?php endif; ?><p>
-	<?php echo Html::anchor('admin/unitofmeasures/create', 'Add new Unitofmeasure', array('class' => 'btn btn-success')); ?>
+	<?php echo Html::anchor('faculty/unitofmeasures/create', 'Add new Unitofmeasure', array('class' => 'btn btn-success')); ?>
 
 </p>

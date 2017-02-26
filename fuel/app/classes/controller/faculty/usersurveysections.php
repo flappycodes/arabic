@@ -1,12 +1,12 @@
 <?php
-class Controller_Admin_Usersurveysections extends Controller_Admin
+class Controller_Faculty_Usersurveysections extends Controller_Faculty
 {
 
 	public function action_index()
 	{
 		$data['usersurveysections'] = Model_Usersurveysection::find('all');
 		$this->template->title = "Usersurveysections";
-		$this->template->content = View::forge('admin/usersurveysections/index', $data);
+		$this->template->content = View::forge('faculty/usersurveysections/index', $data);
 
 	}
 
@@ -15,7 +15,7 @@ class Controller_Admin_Usersurveysections extends Controller_Admin
 		$data['usersurveysection'] = Model_Usersurveysection::find($id);
 
 		$this->template->title = "Usersurveysection";
-		$this->template->content = View::forge('admin/usersurveysections/view', $data);
+		$this->template->content = View::forge('faculty/usersurveysections/view', $data);
 
 	}
 
@@ -37,7 +37,7 @@ class Controller_Admin_Usersurveysections extends Controller_Admin
 				{
 					Session::set_flash('success', e('Added usersurveysection #'.$usersurveysection->id.'.'));
 
-					Response::redirect('admin/usersurveysections');
+					Response::redirect('faculty/usersurveysections');
 				}
 
 				else
@@ -52,7 +52,7 @@ class Controller_Admin_Usersurveysections extends Controller_Admin
 		}
 
 		$this->template->title = "Usersurveysections";
-		$this->template->content = View::forge('admin/usersurveysections/create');
+		$this->template->content = View::forge('faculty/usersurveysections/create');
 
 	}
 
@@ -71,7 +71,7 @@ class Controller_Admin_Usersurveysections extends Controller_Admin
 			{
 				Session::set_flash('success', e('Updated usersurveysection #' . $id));
 
-				Response::redirect('admin/usersurveysections');
+				Response::redirect('faculty/usersurveysections');
 			}
 
 			else
@@ -95,7 +95,7 @@ class Controller_Admin_Usersurveysections extends Controller_Admin
 		}
 
 		$this->template->title = "Usersurveysections";
-		$this->template->content = View::forge('admin/usersurveysections/edit');
+		$this->template->content = View::forge('faculty/usersurveysections/edit');
 
 	}
 
@@ -113,7 +113,7 @@ class Controller_Admin_Usersurveysections extends Controller_Admin
 			Session::set_flash('error', e('Could not delete usersurveysection #'.$id));
 		}
 
-		Response::redirect('admin/usersurveysections');
+		Response::redirect('faculty/usersurveysections');
 
 	}
 

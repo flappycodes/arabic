@@ -12,8 +12,8 @@ class Controller_Admin extends Controller_Base
 		{
 			if (Auth::check())
 			{
-				$admin_group_id = Config::get('auth.driver', 'Simpleauth') == 'Ormauth' ? 6 : 100;
-				if ( ! Auth::member($admin_group_id))
+				// $admin_group_id = Config::get('auth.driver', 'Simpleauth') == 'Ormauth' ? 6 : 100;
+				if ( ! Auth::member(100))
 				{
 					Session::set_flash('error', e('You don\'t have access to the admin panel'));
 					Response::redirect('/');
@@ -47,7 +47,7 @@ class Controller_Admin extends Controller_Base
 					if (Auth::login(Input::post('email'), Input::post('password')))
 					{
 						// assign the user id that lasted updated this record
-						foreach (\Auth::verified() as $driver)
+						/*foreach (\Auth::verified() as $driver)
 						{
 							if (($id = $driver->get_user_id()) !== false)
 							{
@@ -56,17 +56,33 @@ class Controller_Admin extends Controller_Base
 								Session::set_flash('success', e('Welcome, '.$current_user->username));
 								Response::redirect('admin');
 							}
+						}*/
+
+						// credentials ok, go right in
+						$current_user = Model_User::find_by_username(Auth::get_screen_name());
+						Session::set_flash('success', e('Welcome, '.$current_user->username));
+						if (Auth::member(1)) {
+							Response::redirect('user');
+						}
+						if (Auth::member(50)) {
+							Response::redirect('faculty');
+						}
+						if (Auth::member(100)) {
+							Response::redirect('admin');
 						}
 					}
 					else
 					{
-						$this->template->set_global('login_error', 'Login failed!');
+						// $this->template->set_global('login_error', 'Login failed!');
+						$this->template->set_global('login_error', '<script>alert("Username or Email and Password Mismatch!")</script>');
 					}
 				}
 				else
 				{
 					$this->template->set_global('login_error', 'Already logged in!');
 				}
+
+
 			}
 		}
 

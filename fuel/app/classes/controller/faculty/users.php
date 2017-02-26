@@ -1,10 +1,10 @@
 <?php
-class Controller_Admin_Users extends Controller_Admin
+class Controller_Faculty_Users extends Controller_Faculty
 {
 	public function action_index(){
 		$data['users'] = Model_User::find('all');
 		$this->template->title = "Listing users";
-		$this->template->content = View::forge('admin/users/index', $data);
+		$this->template->content = View::forge('faculty/users/index', $data);
 	}
 
 	public function action_view(){

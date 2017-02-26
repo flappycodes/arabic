@@ -1,227 +1,167 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title><?php echo $title; ?></title>
-	<?php echo Asset::css(array('assets/plugins/bootstrap/css/bootstrap.css',
-	'assets/css/main.css',
-	'assets/css/theme.css',
-	'assets/css/MoneAdmin.css',
-	'assets/plugins/Font-Awesome/css/font-awesome.css',
-	'assets/plugins/flot/examples/examples.css',
-	'assets/plugins/timeline/timeline.css')); ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><?php echo $title; ?></title> 
+	<?php echo Asset::css(
+            array(
+            	'admin_template/css/bootstrap.min.css',
+            	'admin_template/css/bootstrap-theme.css',
+            	'admin_template/css/elegant-icons-style.css',
+                'admin_template/css/font-awesome.css',
+            	'admin_template/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css',
+            	'admin_template/assets/fullcalendar/fullcalendar/fullcalendar.css',
+                'admin_template/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css',
+                'admin_template/css/owl.carousel.css',
+                'admin_template/css/jquery-jvectormap-1.2.2.css',
+                'admin_template/css/fullcalendar.css',
+                'admin_template/css/widgets.css',
+                'admin_template/css/style.css',
+                'admin_template/css/style-responsive.css',
+                'admin_template/css/xcharts.min.css',
+                'admin_template/css/jquery-ui-1.10.4.min.css'
+        )); 
+    ?>
 
-	<?php echo Asset::js(array(
-		'assets/plugins/jquery-2.0.3.min.js',
-		'assets/plugins/bootstrap/js/bootstrap.min.js',
-		'assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js',
-		'assets/plugins/flot/jquery.flot.js',
-		'assets/plugins/flot/jquery.flot.resize.js',
-		'assets/plugins/flot/jquery.flot.time.js',
-		'assets/plugins/flot/jquery.flot.stack.js',
-		'assets/js/for_index.js'
-	)); ?>
-	<script>
-		$(function(){ $('.topbar').dropdown(); });
-	</script>
 </head>
-<body class="padTop53 " >
+<?php if (!$current_user): ?>
+    <body class="login-img3-body">
+    <?php echo $content; ?>
+<?php else: ?>
+    <body class="padTop53">
+<?php endif ?>
 <?php if ($current_user): ?>
- <div id="wrap" >
-        <!-- HEADER SECTION -->
-        <div id="top">
-
-            <nav class="navbar navbar-inverse navbar-fixed-top " style="padding-top: 10px;">
-                <a data-original-title="Show/Hide Menu" data-placement="bottom" data-tooltip="tooltip" class="accordion-toggle btn btn-primary btn-sm visible-xs" data-toggle="collapse" href="#menu" id="menu-toggle">
-                    <i class="icon-align-justify"></i>
-                </a>
-                <!-- LOGO SECTION -->
-                <header class="navbar-header">
-
-                    <a href="index.html" class="navbar-brand">
-                    <!-- <img src="assets/img/logo.png" alt="" /> -->
-                        
-                        </a>
-                </header>
-                <!-- END LOGO SECTION -->
-                <ul class="nav navbar-top-links navbar-right">
-                    <!--ADMIN SETTINGS SECTIONS -->
-
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="icon-user "></i>&nbsp; <i class="icon-chevron-down "></i>
-                        </a>
-
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#"><i class="icon-user"></i> User Profile </a>
-                            </li>
-                            <li><a href="#"><i class="icon-gear"></i> Settings </a>
-                            </li>
-                            <li class="divider"></li>
-                     
-
-							<li><?php echo Html::anchor('admin/logout', '<i class="icon-signout"></i> Logout') ?></li>
-                          
-                        </ul>
-
-                    </li>
-                    <!--END ADMIN SETTINGS -->
-                </ul>
-
-            </nav>
-
+ <section id="container" class="">
+    <header class="header dark-bg">
+        <div class="toggle-nav">
+            <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
         </div>
-        <!-- END HEADER SECTION -->
 
-        <!-- MENU SECTION -->
-       <div id="left" >
-            <div class="media user-media well-small">
-                <a class="user-link" href="#">
-                <?php echo Html::img('assets/img/user.png', array("alt" => "User", 'class' => "media-object img-thumbnail user-img",'style'=>' width: 70px;')); ?>
-                </a>
-                <br />
-                <div class="media-body">
-                    <h5 class="media-heading"> Joe Romlin</h5>
-                    <ul class="list-unstyled user-info">
-                        
-                        <li>
-                             <a class="btn btn-success btn-xs btn-circle" style="width: 10px;height: 12px;"></a> Online
-                           
-                        </li>
-                       
-                    </ul>
-                </div>
-                <br />
-            </div>
+        <!--logo start-->
+        <a href="/" class="logo">a<span class="lite">rabic</span></a>
+        <!--logo end-->
 
-            <ul id="menu" class="collapse">
-
-                <li class="panel <?php echo Uri::segment(2) == '' ? 'active' : '' ?>">
-					<?php echo Html::anchor('admin', '<i class="icon-dashboard"></i> Dashboard') ?>
-				</li>
-
-                <li class="panel">
-                    <?php echo Html::anchor('admin/users', 'Users') ?>
-                </li>
+        <div class="nav search-row" id="top_menu">
+            <!--  search form start -->
+            <ul class="nav top-menu">                    
+                <li>
+                    <form class="navbar-form">
+                        <input class="form-control" placeholder="Search" type="text">
+                    </form>
+                </li>                    
             </ul>
-
+            <!--  search form end -->                
         </div>
-        <!--END MENU SECTION -->
 
+    </header>      
+      <!--header end-->
 
-
-        <!--PAGE CONTENT -->
-        <div id="content">
-             
-            <div class="inner" style="min-height: 700px;">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1> Admin Dashboard </h1>
-                    </div>
-                </div>
-                  <hr />
-             
-                 <div class="container">
-                  <div class="col-lg-12">
-                 <?php if (Session::get_flash('success')): ?>
-								<div class="alert alert-success alert-dismissable">
-									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-									<p>
-									<?php echo implode('</p><p>', (array) Session::get_flash('success')); ?>
-									</p>
-								</div>
-				<?php endif; ?>
-				<?php if (Session::get_flash('error')): ?>
-								<div class="alert alert-danger alert-dismissable">
-									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-									<p>
-									<?php echo implode('</p><p>', (array) Session::get_flash('error')); ?>
-									</p>
-								</div>
-				<?php endif; ?>
-                 	<?php echo $content; ?>
-                 </div>
-                </div> 
-
-			</div>
-		
-        </div>
-    </div>
- </div>
+   <!--sidebar start-->
+   <aside>
+      <div id="sidebar"  class="nav-collapse ">
+          <!-- sidebar menu start-->
+          <ul class="sidebar-menu">                
+                <li class="active">
+                    <?php echo Html::anchor('admin', '<i class="icon_house_alt"></i> Dashboard') ?>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="">
+                        <i class="icon_cog"></i>
+                        <span>Settings</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li>
+                            <?php echo Html::anchor('admin/users', 'Users') ?>
+                        </li>                          
+                        <li><a class="" href="/">Madarasah Information</a></li>
+                        <li>
+                            <?php echo Html::anchor('admin/logout', 'Logout') ?>
+                        </li> 
+                    </ul>
+              </li> 
               
-
-                
+          </ul>
+          <!-- sidebar menu end-->
+      </div>
+   </aside>
+   <!--sidebar end-->
+      
+  <!--main content start-->
+  <section id="main-content">
+      <section class="wrapper">            
+          <!--overview start-->
+          <div class="row">
+            <div class="col-lg-12">
+                <?php if (Session::get_flash('success')): ?>
+                    <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <p>
+                        <?php echo implode('</p><p>', (array) Session::get_flash('success')); ?>
+                        </p>
+                    </div>
+                <?php endif; ?>
+                <?php if (Session::get_flash('error')): ?>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <p>
+                        <?php echo implode('</p><p>', (array) Session::get_flash('error')); ?>
+                        </p>
+                    </div>
+                <?php endif; ?>
             </div>
-
+            <?php echo $content; ?>
         </div>
-        <!--END PAGE CONTENT -->
-
-         <!-- RIGHT STRIP  SECTION -->
-        <div id="right"> 
-            <div class="well well-small">
-                <ul class="list-unstyled">
-                    <li>Visitor &nbsp; : <span>23,000</span></li>
-                    <li>Users &nbsp; : <span>53,000</span></li>
-                    <li>Registrations &nbsp; : <span>3,000</span></li>
-                </ul>
-            </div>
-            <div class="well well-small">
-                <button class="btn btn-block"> Help </button>
-                <button class="btn btn-primary btn-block"> Tickets</button>
-                <button class="btn btn-info btn-block"> New </button>
-                <button class="btn btn-success btn-block"> Users </button>
-                <button class="btn btn-danger btn-block"> Profit </button>
-                <button class="btn btn-warning btn-block"> Sales </button>
-                <button class="btn btn-inverse btn-block"> Stock </button>
-            </div>
-            <div class="well well-small">
-                <span>Profit</span><span class="pull-right"><small>20%</small></span>
-
-                <div class="progress mini">
-                    <div class="progress-bar progress-bar-info" style="width: 20%"></div>
-                </div>
-                <span>Sales</span><span class="pull-right"><small>40%</small></span>
-
-                <div class="progress mini">
-                    <div class="progress-bar progress-bar-success" style="width: 40%"></div>
-                </div>
-                <span>Pending</span><span class="pull-right"><small>60%</small></span>
-
-                <div class="progress mini">
-                    <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
-                </div>
-                <span>Summary</span><span class="pull-right"><small>80%</small></span>
-
-                <div class="progress mini">
-                    <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
-                </div>
-            </div>
-        </div>
-         <!-- END RIGHT STRIP  SECTION -->
-    </div>
-
-    <!--END MAIN WRAPPER -->
-
-    <!-- FOOTER -->
-    <div id="footer">
-        <p>&copy;  &nbsp;2017 &nbsp;</p>
-    </div>
+      </section>
+      <!--main content end-->
+  </section>
     <!--END FOOTER -->
     	<?php endif; ?>
-<?php if (!$current_user): ?>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h1><?php echo $title; ?></h1>
-				<hr>
+    
+    <?php echo Asset::js(
+            array(
+                'admin_template/js/jquery.js',
+                'admin_template/js/jquery-ui-1.10.4.min.js',
+                'admin_template/js/jquery-1.8.3.min.js',
+                'admin_template/js/jquery-ui-1.9.2.custom.min.js',
+                'admin_template/js/bootstrap.min.js',
+                'admin_template/js/jquery.scrollTo.min.js',
+                'admin_template/js/jquery.nicescroll.js',
+                'admin_template/assets/jquery-knob/js/jquery.knob.js',
+                'admin_template/js/jquery.sparkline.js',
+                'admin_template/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js',
+                'admin_template/js/owl.carousel.js',
+                'admin_template/js/fullcalendar.min.js',
+                'admin_template/assets/fullcalendar/fullcalendar/fullcalendar.js',
+                'admin_template/js/calendar-custom.js',
+                'admin_template/js/jquery.rateit.min.js',
+                'admin_template/js/jquery.customSelect.min.js',
+                'admin_template/assets/chart-master/Chart.js',
+                'admin_template/js/scripts.js',
+                'admin_template/js/sparkline-chart.js',
+                'admin_template/js/easy-pie-chart.js',
+                'admin_template/js/jquery-jvectormap-1.2.2.min.js',
+                'admin_template/js/jquery-jvectormap-world-mill-en.js',
+                'admin_template/js/xcharts.min.js',
+                'admin_template/js/jquery.autosize.min.js',
+                'admin_template/js/jquery.placeholder.min.js',
+                'admin_template/js/gdp-data.js',
+                'admin_template/js/morris.min.js',
+                'admin_template/js/sparklines.js',
+                'admin_template/js/charts.js',
+                'admin_template/js/jquery.slimscroll.min.js',
+                'datatables/jquery.dataTables.js',
+                'datatables/dataTables.bootstrap.js'
+        )); 
+    ?>
+    <script>
 
-			</div>
-			<div class="col-md-12">
-        <?php echo $content; ?>
-			</div>
-		</div>
-		<hr/>
-	</div>
-<?php endif; ?>
+      //carousel
+      $(document).ready(function() {
+          $('#userstbl').dataTable();
+      });
+
+  </script>
 </body>
 </html>

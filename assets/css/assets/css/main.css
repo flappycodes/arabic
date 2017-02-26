@@ -12,6 +12,12 @@ background-repeat: repeat-x;
    background-image: linear-gradient(to bottom, #EEECEC  0%, #E2E2E2  100%) !important;
 }
 
+.login-bg {
+      background: url(../img/noise.png), url(../img/photo2.png);
+      background-repeat: repeat, no-repeat;
+      background-position: left top;
+      background-size: auto, cover;
+  }
 
 /*********************************************************/
 

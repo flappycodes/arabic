@@ -1,12 +1,12 @@
 <?php
-class Controller_Admin_Optiongroups extends Controller_Admin
+class Controller_Faculty_Optiongroups extends Controller_Faculty
 {
 
 	public function action_index()
 	{
 		$data['optiongroups'] = Model_Optiongroup::find('all');
 		$this->template->title = "Optiongroups";
-		$this->template->content = View::forge('admin/optiongroups/index', $data);
+		$this->template->content = View::forge('faculty/optiongroups/index', $data);
 
 	}
 
@@ -15,7 +15,7 @@ class Controller_Admin_Optiongroups extends Controller_Admin
 		$data['optiongroup'] = Model_Optiongroup::find($id);
 
 		$this->template->title = "Optiongroup";
-		$this->template->content = View::forge('admin/optiongroups/view', $data);
+		$this->template->content = View::forge('faculty/optiongroups/view', $data);
 
 	}
 
@@ -35,7 +35,7 @@ class Controller_Admin_Optiongroups extends Controller_Admin
 				{
 					Session::set_flash('success', e('Added optiongroup #'.$optiongroup->id.'.'));
 
-					Response::redirect('admin/optiongroups');
+					Response::redirect('faculty/optiongroups');
 				}
 
 				else
@@ -50,7 +50,7 @@ class Controller_Admin_Optiongroups extends Controller_Admin
 		}
 
 		$this->template->title = "Optiongroups";
-		$this->template->content = View::forge('admin/optiongroups/create');
+		$this->template->content = View::forge('faculty/optiongroups/create');
 
 	}
 
@@ -67,7 +67,7 @@ class Controller_Admin_Optiongroups extends Controller_Admin
 			{
 				Session::set_flash('success', e('Updated optiongroup #' . $id));
 
-				Response::redirect('admin/optiongroups');
+				Response::redirect('faculty/optiongroups');
 			}
 
 			else
@@ -89,7 +89,7 @@ class Controller_Admin_Optiongroups extends Controller_Admin
 		}
 
 		$this->template->title = "Optiongroups";
-		$this->template->content = View::forge('admin/optiongroups/edit');
+		$this->template->content = View::forge('faculty/optiongroups/edit');
 
 	}
 
@@ -107,7 +107,7 @@ class Controller_Admin_Optiongroups extends Controller_Admin
 			Session::set_flash('error', e('Could not delete optiongroup #'.$id));
 		}
 
-		Response::redirect('admin/optiongroups');
+		Response::redirect('faculty/optiongroups');
 
 	}
 

@@ -1,12 +1,12 @@
 <?php
-class Controller_Admin_Unitofmeasures extends Controller_Admin
+class Controller_Faculty_Unitofmeasures extends Controller_Faculty
 {
 
 	public function action_index()
 	{
 		$data['unitofmeasures'] = Model_Unitofmeasure::find('all');
 		$this->template->title = "Unitofmeasures";
-		$this->template->content = View::forge('admin/unitofmeasures/index', $data);
+		$this->template->content = View::forge('faculty/unitofmeasures/index', $data);
 
 	}
 
@@ -15,7 +15,7 @@ class Controller_Admin_Unitofmeasures extends Controller_Admin
 		$data['unitofmeasure'] = Model_Unitofmeasure::find($id);
 
 		$this->template->title = "Unitofmeasure";
-		$this->template->content = View::forge('admin/unitofmeasures/view', $data);
+		$this->template->content = View::forge('faculty/unitofmeasures/view', $data);
 
 	}
 
@@ -35,7 +35,7 @@ class Controller_Admin_Unitofmeasures extends Controller_Admin
 				{
 					Session::set_flash('success', e('Added unitofmeasure #'.$unitofmeasure->id.'.'));
 
-					Response::redirect('admin/unitofmeasures');
+					Response::redirect('faculty/unitofmeasures');
 				}
 
 				else
@@ -50,7 +50,7 @@ class Controller_Admin_Unitofmeasures extends Controller_Admin
 		}
 
 		$this->template->title = "Unitofmeasures";
-		$this->template->content = View::forge('admin/unitofmeasures/create');
+		$this->template->content = View::forge('faculty/unitofmeasures/create');
 
 	}
 
@@ -67,7 +67,7 @@ class Controller_Admin_Unitofmeasures extends Controller_Admin
 			{
 				Session::set_flash('success', e('Updated unitofmeasure #' . $id));
 
-				Response::redirect('admin/unitofmeasures');
+				Response::redirect('faculty/unitofmeasures');
 			}
 
 			else
@@ -89,7 +89,7 @@ class Controller_Admin_Unitofmeasures extends Controller_Admin
 		}
 
 		$this->template->title = "Unitofmeasures";
-		$this->template->content = View::forge('admin/unitofmeasures/edit');
+		$this->template->content = View::forge('faculty/unitofmeasures/edit');
 
 	}
 
@@ -107,7 +107,7 @@ class Controller_Admin_Unitofmeasures extends Controller_Admin
 			Session::set_flash('error', e('Could not delete unitofmeasure #'.$id));
 		}
 
-		Response::redirect('admin/unitofmeasures');
+		Response::redirect('faculty/unitofmeasures');
 
 	}
 

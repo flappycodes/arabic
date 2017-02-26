@@ -1,7 +1,7 @@
 <h2>Editing Optiongroup</h2>
 <br>
 
-<?php echo render('admin/optiongroups/_form'); ?>
+<?php echo render('faculty/optiongroups/_form'); ?>
 <p>
-	<?php echo Html::anchor('admin/optiongroups/view/'.$optiongroup->id, 'View'); ?> |
-	<?php echo Html::anchor('admin/optiongroups', 'Back'); ?></p>
+	<?php echo Html::anchor('faculty/optiongroups/view/'.$optiongroup->id, 'View'); ?> |
+	<?php echo Html::anchor('faculty/optiongroups', 'Back'); ?></p>

@@ -4,5 +4,5 @@
 	<strong>Unit of measures name:</strong>
 	<?php echo $unitofmeasure->unit_of_measures_name; ?></p>
 
-<?php echo Html::anchor('admin/unitofmeasures/edit/'.$unitofmeasure->id, 'Edit'); ?> |
-<?php echo Html::anchor('admin/unitofmeasures', 'Back'); ?>
+<?php echo Html::anchor('faculty/unitofmeasures/edit/'.$unitofmeasure->id, 'Edit'); ?> |
+<?php echo Html::anchor('faculty/unitofmeasures', 'Back'); ?>

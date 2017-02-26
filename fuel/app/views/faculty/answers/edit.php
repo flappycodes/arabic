@@ -1,7 +1,7 @@
 <h2>Editing Answer</h2>
 <br>
 
-<?php echo render('admin/answers/_form'); ?>
+<?php echo render('faculty/answers/_form'); ?>
 <p>
-	<?php echo Html::anchor('admin/answers/view/'.$answer->id, 'View'); ?> |
-	<?php echo Html::anchor('admin/answers', 'Back'); ?></p>
+	<?php echo Html::anchor('faculty/answers/view/'.$answer->id, 'View'); ?> |
+	<?php echo Html::anchor('faculty/answers', 'Back'); ?></p>

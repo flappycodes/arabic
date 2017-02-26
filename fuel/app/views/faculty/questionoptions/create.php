@@ -1,7 +1,7 @@
 <h2>New Questionoption</h2>
 <br>
 
-<?php echo render('admin/questionoptions/_form'); ?>
+<?php echo render('faculty/questionoptions/_form'); ?>
 
 
-<p><?php echo Html::anchor('admin/questionoptions', 'Back'); ?></p>
+<p><?php echo Html::anchor('faculty/questionoptions', 'Back'); ?></p>

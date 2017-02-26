@@ -10,5 +10,5 @@
 	<strong>Comments:</strong>
 	<?php echo $surveycomment->comments; ?></p>
 
-<?php echo Html::anchor('admin/surveycomments/edit/'.$surveycomment->id, 'Edit'); ?> |
-<?php echo Html::anchor('admin/surveycomments', 'Back'); ?>
+<?php echo Html::anchor('faculty/surveycomments/edit/'.$surveycomment->id, 'Edit'); ?> |
+<?php echo Html::anchor('faculty/surveycomments', 'Back'); ?>

@@ -1,12 +1,12 @@
 <?php
-class Controller_Admin_Optionchoices extends Controller_Admin
+class Controller_Faculty_Optionchoices extends Controller_Faculty
 {
 
 	public function action_index()
 	{
 		$data['optionchoices'] = Model_Optionchoice::find('all');
 		$this->template->title = "Optionchoices";
-		$this->template->content = View::forge('admin/optionchoices/index', $data);
+		$this->template->content = View::forge('faculty/optionchoices/index', $data);
 
 	}
 
@@ -15,7 +15,7 @@ class Controller_Admin_Optionchoices extends Controller_Admin
 		$data['optionchoice'] = Model_Optionchoice::find($id);
 
 		$this->template->title = "Optionchoice";
-		$this->template->content = View::forge('admin/optionchoices/view', $data);
+		$this->template->content = View::forge('faculty/optionchoices/view', $data);
 
 	}
 
@@ -36,7 +36,7 @@ class Controller_Admin_Optionchoices extends Controller_Admin
 				{
 					Session::set_flash('success', e('Added optionchoice #'.$optionchoice->id.'.'));
 
-					Response::redirect('admin/optionchoices');
+					Response::redirect('faculty/optionchoices');
 				}
 
 				else
@@ -51,7 +51,7 @@ class Controller_Admin_Optionchoices extends Controller_Admin
 		}
 
 		$this->template->title = "Optionchoices";
-		$this->template->content = View::forge('admin/optionchoices/create');
+		$this->template->content = View::forge('faculty/optionchoices/create');
 
 	}
 
@@ -69,7 +69,7 @@ class Controller_Admin_Optionchoices extends Controller_Admin
 			{
 				Session::set_flash('success', e('Updated optionchoice #' . $id));
 
-				Response::redirect('admin/optionchoices');
+				Response::redirect('faculty/optionchoices');
 			}
 
 			else
@@ -92,7 +92,7 @@ class Controller_Admin_Optionchoices extends Controller_Admin
 		}
 
 		$this->template->title = "Optionchoices";
-		$this->template->content = View::forge('admin/optionchoices/edit');
+		$this->template->content = View::forge('faculty/optionchoices/edit');
 
 	}
 
@@ -110,7 +110,7 @@ class Controller_Admin_Optionchoices extends Controller_Admin
 			Session::set_flash('error', e('Could not delete optionchoice #'.$id));
 		}
 
-		Response::redirect('admin/optionchoices');
+		Response::redirect('faculty/optionchoices');
 
 	}
 

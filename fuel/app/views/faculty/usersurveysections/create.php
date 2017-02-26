@@ -1,7 +1,7 @@
 <h2>New Usersurveysection</h2>
 <br>
 
-<?php echo render('admin/usersurveysections/_form'); ?>
+<?php echo render('faculty/usersurveysections/_form'); ?>
 
 
-<p><?php echo Html::anchor('admin/usersurveysections', 'Back'); ?></p>
+<p><?php echo Html::anchor('faculty/usersurveysections', 'Back'); ?></p>

@@ -1,12 +1,12 @@
 <?php
-class Controller_Admin_Answers extends Controller_Admin
+class Controller_Faculty_Answers extends Controller_Faculty
 {
 
 	public function action_index()
 	{
 		$data['answers'] = Model_Answer::find('all');
 		$this->template->title = "Answers";
-		$this->template->content = View::forge('admin/answers/index', $data);
+		$this->template->content = View::forge('faculty/answers/index', $data);
 
 	}
 
@@ -15,7 +15,7 @@ class Controller_Admin_Answers extends Controller_Admin
 		$data['answer'] = Model_Answer::find($id);
 
 		$this->template->title = "Answer";
-		$this->template->content = View::forge('admin/answers/view', $data);
+		$this->template->content = View::forge('faculty/answers/view', $data);
 
 	}
 
@@ -40,7 +40,7 @@ class Controller_Admin_Answers extends Controller_Admin
 				{
 					Session::set_flash('success', e('Added answer #'.$answer->id.'.'));
 
-					Response::redirect('admin/answers');
+					Response::redirect('faculty/answers');
 				}
 
 				else
@@ -55,7 +55,7 @@ class Controller_Admin_Answers extends Controller_Admin
 		}
 
 		$this->template->title = "Answers";
-		$this->template->content = View::forge('admin/answers/create');
+		$this->template->content = View::forge('faculty/answers/create');
 
 	}
 
@@ -77,7 +77,7 @@ class Controller_Admin_Answers extends Controller_Admin
 			{
 				Session::set_flash('success', e('Updated answer #' . $id));
 
-				Response::redirect('admin/answers');
+				Response::redirect('faculty/answers');
 			}
 
 			else
@@ -104,7 +104,7 @@ class Controller_Admin_Answers extends Controller_Admin
 		}
 
 		$this->template->title = "Answers";
-		$this->template->content = View::forge('admin/answers/edit');
+		$this->template->content = View::forge('faculty/answers/edit');
 
 	}
 
@@ -122,7 +122,7 @@ class Controller_Admin_Answers extends Controller_Admin
 			Session::set_flash('error', e('Could not delete answer #'.$id));
 		}
 
-		Response::redirect('admin/answers');
+		Response::redirect('faculty/answers');
 
 	}
 

@@ -10,5 +10,5 @@
 	<strong>Completed on:</strong>
 	<?php echo $usersurveysection->completed_on; ?></p>
 
-<?php echo Html::anchor('admin/usersurveysections/edit/'.$usersurveysection->id, 'Edit'); ?> |
-<?php echo Html::anchor('admin/usersurveysections', 'Back'); ?>
+<?php echo Html::anchor('faculty/usersurveysections/edit/'.$usersurveysection->id, 'Edit'); ?> |
+<?php echo Html::anchor('faculty/usersurveysections', 'Back'); ?>

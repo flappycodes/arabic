@@ -1,12 +1,12 @@
 <?php
-class Controller_Admin_Questions extends Controller_Admin
+class Controller_Faculty_Questions extends Controller_Faculty
 {
 
 	public function action_index()
 	{
 		$data['questions'] = Model_Question::find('all');
 		$this->template->title = "Questions";
-		$this->template->content = View::forge('admin/questions/index', $data);
+		$this->template->content = View::forge('faculty/questions/index', $data);
 
 	}
 
@@ -15,7 +15,7 @@ class Controller_Admin_Questions extends Controller_Admin
 		$data['question'] = Model_Question::find($id);
 
 		$this->template->title = "Question";
-		$this->template->content = View::forge('admin/questions/view', $data);
+		$this->template->content = View::forge('faculty/questions/view', $data);
 
 	}
 
@@ -39,7 +39,7 @@ class Controller_Admin_Questions extends Controller_Admin
 				{
 					Session::set_flash('success', e('Added question #'.$question->id.'.'));
 
-					Response::redirect('admin/questions');
+					Response::redirect('faculty/questions');
 				}
 
 				else
@@ -54,7 +54,7 @@ class Controller_Admin_Questions extends Controller_Admin
 		}
 
 		$this->template->title = "Questions";
-		$this->template->content = View::forge('admin/questions/create');
+		$this->template->content = View::forge('faculty/questions/create');
 
 	}
 
@@ -75,7 +75,7 @@ class Controller_Admin_Questions extends Controller_Admin
 			{
 				Session::set_flash('success', e('Updated question #' . $id));
 
-				Response::redirect('admin/questions');
+				Response::redirect('faculty/questions');
 			}
 
 			else
@@ -101,7 +101,7 @@ class Controller_Admin_Questions extends Controller_Admin
 		}
 
 		$this->template->title = "Questions";
-		$this->template->content = View::forge('admin/questions/edit');
+		$this->template->content = View::forge('faculty/questions/edit');
 
 	}
 
@@ -119,7 +119,7 @@ class Controller_Admin_Questions extends Controller_Admin
 			Session::set_flash('error', e('Could not delete question #'.$id));
 		}
 
-		Response::redirect('admin/questions');
+		Response::redirect('faculty/questions');
 
 	}
 

@@ -1,7 +1,7 @@
 <h2>New Inputtype</h2>
 <br>
 
-<?php echo render('admin/inputtypes/_form'); ?>
+<?php echo render('faculty/inputtypes/_form'); ?>
 
 
-<p><?php echo Html::anchor('admin/inputtypes', 'Back'); ?></p>
+<p><?php echo Html::anchor('faculty/inputtypes', 'Back'); ?></p>

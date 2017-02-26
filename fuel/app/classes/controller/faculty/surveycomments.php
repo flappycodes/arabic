@@ -1,12 +1,12 @@
 <?php
-class Controller_Admin_Surveycomments extends Controller_Admin
+class Controller_Faculty_Surveycomments extends Controller_Faculty
 {
 
 	public function action_index()
 	{
 		$data['surveycomments'] = Model_Surveycomment::find('all');
 		$this->template->title = "Surveycomments";
-		$this->template->content = View::forge('admin/surveycomments/index', $data);
+		$this->template->content = View::forge('faculty/surveycomments/index', $data);
 
 	}
 
@@ -15,7 +15,7 @@ class Controller_Admin_Surveycomments extends Controller_Admin
 		$data['surveycomment'] = Model_Surveycomment::find($id);
 
 		$this->template->title = "Surveycomment";
-		$this->template->content = View::forge('admin/surveycomments/view', $data);
+		$this->template->content = View::forge('faculty/surveycomments/view', $data);
 
 	}
 
@@ -37,7 +37,7 @@ class Controller_Admin_Surveycomments extends Controller_Admin
 				{
 					Session::set_flash('success', e('Added surveycomment #'.$surveycomment->id.'.'));
 
-					Response::redirect('admin/surveycomments');
+					Response::redirect('faculty/surveycomments');
 				}
 
 				else
@@ -52,7 +52,7 @@ class Controller_Admin_Surveycomments extends Controller_Admin
 		}
 
 		$this->template->title = "Surveycomments";
-		$this->template->content = View::forge('admin/surveycomments/create');
+		$this->template->content = View::forge('faculty/surveycomments/create');
 
 	}
 
@@ -71,7 +71,7 @@ class Controller_Admin_Surveycomments extends Controller_Admin
 			{
 				Session::set_flash('success', e('Updated surveycomment #' . $id));
 
-				Response::redirect('admin/surveycomments');
+				Response::redirect('faculty/surveycomments');
 			}
 
 			else
@@ -95,7 +95,7 @@ class Controller_Admin_Surveycomments extends Controller_Admin
 		}
 
 		$this->template->title = "Surveycomments";
-		$this->template->content = View::forge('admin/surveycomments/edit');
+		$this->template->content = View::forge('faculty/surveycomments/edit');
 
 	}
 
@@ -113,7 +113,7 @@ class Controller_Admin_Surveycomments extends Controller_Admin
 			Session::set_flash('error', e('Could not delete surveycomment #'.$id));
 		}
 
-		Response::redirect('admin/surveycomments');
+		Response::redirect('faculty/surveycomments');
 
 	}
 

@@ -7,5 +7,5 @@
 	<strong>Option choice name:</strong>
 	<?php echo $optionchoice->option_choice_name; ?></p>
 
-<?php echo Html::anchor('admin/optionchoices/edit/'.$optionchoice->id, 'Edit'); ?> |
-<?php echo Html::anchor('admin/optionchoices', 'Back'); ?>
+<?php echo Html::anchor('faculty/optionchoices/edit/'.$optionchoice->id, 'Edit'); ?> |
+<?php echo Html::anchor('faculty/optionchoices', 'Back'); ?>

@@ -1,12 +1,12 @@
 <?php
-class Controller_Admin_Questionoptions extends Controller_Admin
+class Controller_Faculty_Questionoptions extends Controller_Faculty
 {
 
 	public function action_index()
 	{
 		$data['questionoptions'] = Model_Questionoption::find('all');
 		$this->template->title = "Questionoptions";
-		$this->template->content = View::forge('admin/questionoptions/index', $data);
+		$this->template->content = View::forge('faculty/questionoptions/index', $data);
 
 	}
 
@@ -15,7 +15,7 @@ class Controller_Admin_Questionoptions extends Controller_Admin
 		$data['questionoption'] = Model_Questionoption::find($id);
 
 		$this->template->title = "Questionoption";
-		$this->template->content = View::forge('admin/questionoptions/view', $data);
+		$this->template->content = View::forge('faculty/questionoptions/view', $data);
 
 	}
 
@@ -36,7 +36,7 @@ class Controller_Admin_Questionoptions extends Controller_Admin
 				{
 					Session::set_flash('success', e('Added questionoption #'.$questionoption->id.'.'));
 
-					Response::redirect('admin/questionoptions');
+					Response::redirect('faculty/questionoptions');
 				}
 
 				else
@@ -51,7 +51,7 @@ class Controller_Admin_Questionoptions extends Controller_Admin
 		}
 
 		$this->template->title = "Questionoptions";
-		$this->template->content = View::forge('admin/questionoptions/create');
+		$this->template->content = View::forge('faculty/questionoptions/create');
 
 	}
 
@@ -69,7 +69,7 @@ class Controller_Admin_Questionoptions extends Controller_Admin
 			{
 				Session::set_flash('success', e('Updated questionoption #' . $id));
 
-				Response::redirect('admin/questionoptions');
+				Response::redirect('faculty/questionoptions');
 			}
 
 			else
@@ -92,7 +92,7 @@ class Controller_Admin_Questionoptions extends Controller_Admin
 		}
 
 		$this->template->title = "Questionoptions";
-		$this->template->content = View::forge('admin/questionoptions/edit');
+		$this->template->content = View::forge('faculty/questionoptions/edit');
 
 	}
 
@@ -110,7 +110,7 @@ class Controller_Admin_Questionoptions extends Controller_Admin
 			Session::set_flash('error', e('Could not delete questionoption #'.$id));
 		}
 
-		Response::redirect('admin/questionoptions');
+		Response::redirect('faculty/questionoptions');
 
 	}
 

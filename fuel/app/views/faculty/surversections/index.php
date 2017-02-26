@@ -21,9 +21,9 @@
 			<td><?php echo $item->section_subheading; ?></td>
 			<td><?php echo $item->section_required_yn; ?></td>
 			<td>
-				<?php echo Html::anchor('admin/surversections/view/'.$item->id, 'View'); ?> |
-				<?php echo Html::anchor('admin/surversections/edit/'.$item->id, 'Edit'); ?> |
-				<?php echo Html::anchor('admin/surversections/delete/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
+				<?php echo Html::anchor('faculty/surversections/view/'.$item->id, 'View'); ?> |
+				<?php echo Html::anchor('faculty/surversections/edit/'.$item->id, 'Edit'); ?> |
+				<?php echo Html::anchor('faculty/surversections/delete/'.$item->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
 
 			</td>
 		</tr>
@@ -34,6 +34,6 @@
 <p>No Surversections.</p>
 
 <?php endif; ?><p>
-	<?php echo Html::anchor('admin/surversections/create', 'Add new Surversection', array('class' => 'btn btn-success')); ?>
+	<?php echo Html::anchor('faculty/surversections/create', 'Add new Surversection', array('class' => 'btn btn-success')); ?>
 
 </p>

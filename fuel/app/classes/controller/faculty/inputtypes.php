@@ -1,12 +1,12 @@
 <?php
-class Controller_Admin_Inputtypes extends Controller_Admin
+class Controller_Faculty_Inputtypes extends Controller_Faculty
 {
 
 	public function action_index()
 	{
 		$data['inputtypes'] = Model_Inputtype::find('all');
 		$this->template->title = "Inputtypes";
-		$this->template->content = View::forge('admin/inputtypes/index', $data);
+		$this->template->content = View::forge('faculty/inputtypes/index', $data);
 
 	}
 
@@ -15,7 +15,7 @@ class Controller_Admin_Inputtypes extends Controller_Admin
 		$data['inputtype'] = Model_Inputtype::find($id);
 
 		$this->template->title = "Inputtype";
-		$this->template->content = View::forge('admin/inputtypes/view', $data);
+		$this->template->content = View::forge('faculty/inputtypes/view', $data);
 
 	}
 
@@ -35,7 +35,7 @@ class Controller_Admin_Inputtypes extends Controller_Admin
 				{
 					Session::set_flash('success', e('Added inputtype #'.$inputtype->id.'.'));
 
-					Response::redirect('admin/inputtypes');
+					Response::redirect('faculty/inputtypes');
 				}
 
 				else
@@ -50,7 +50,7 @@ class Controller_Admin_Inputtypes extends Controller_Admin
 		}
 
 		$this->template->title = "Inputtypes";
-		$this->template->content = View::forge('admin/inputtypes/create');
+		$this->template->content = View::forge('faculty/inputtypes/create');
 
 	}
 
@@ -67,7 +67,7 @@ class Controller_Admin_Inputtypes extends Controller_Admin
 			{
 				Session::set_flash('success', e('Updated inputtype #' . $id));
 
-				Response::redirect('admin/inputtypes');
+				Response::redirect('faculty/inputtypes');
 			}
 
 			else
@@ -89,7 +89,7 @@ class Controller_Admin_Inputtypes extends Controller_Admin
 		}
 
 		$this->template->title = "Inputtypes";
-		$this->template->content = View::forge('admin/inputtypes/edit');
+		$this->template->content = View::forge('faculty/inputtypes/edit');
 
 	}
 
@@ -107,7 +107,7 @@ class Controller_Admin_Inputtypes extends Controller_Admin
 			Session::set_flash('error', e('Could not delete inputtype #'.$id));
 		}
 
-		Response::redirect('admin/inputtypes');
+		Response::redirect('faculty/inputtypes');
 
 	}
 

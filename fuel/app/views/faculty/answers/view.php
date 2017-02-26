@@ -19,5 +19,5 @@
 	<strong>Unit of measure id:</strong>
 	<?php echo $answer->unit_of_measure_id; ?></p>
 
-<?php echo Html::anchor('admin/answers/edit/'.$answer->id, 'Edit'); ?> |
-<?php echo Html::anchor('admin/answers', 'Back'); ?>
+<?php echo Html::anchor('faculty/answers/edit/'.$answer->id, 'Edit'); ?> |
+<?php echo Html::anchor('faculty/answers', 'Back'); ?>
